@@ -18,8 +18,15 @@ class User < ActiveRecord::Base
     format: {with:/.+@.+/}
   validates :password,
     length: {in: 5..10}
+  has_many :toukous
+  has_many :user_groups
 end
 
 class Group < ActiveRecord::Base
+  has_many :user_groups
+end
 
+class UserGroup < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :group
 end

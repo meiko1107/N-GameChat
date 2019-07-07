@@ -19,7 +19,7 @@ end
 post '/toukou' do
   toukou = Toukou.create(
         user_id: params[:user_id],
-        name: params[:name],
+        name: current_user.name,
         body: params[:body]
         )
   redirect '/'

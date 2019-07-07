@@ -6,7 +6,7 @@
 	<title>ApexLegends@N高</title>
 </head>
 <body>
- <nav>
+  <nav>
   <div>
 	 <div>
 	  <a href="/">ApexLegends</a>
@@ -14,21 +14,19 @@
 	 <ul>
 	  <% if !current_user.nil? %>
 		  <div class = "center">
-		  <li>こんにちは、<%= current_user.name %>さん</li>
-			<li><a href="/signout">ログアウト</a></li>
-			<form action = "/toukou" method = "post">
-      <input type = "hidden" name = "user_id" value = "<%= session[:user] %>">
-      <div class = "namae">
-      </div>
-      </form>
-			<div>
-			<% @toukous.each do |toukou| %>
-				<%= toukou.name %><br>
-				<%= toukou.body %><br><hr>
-			<% end %>
-			</div>
-			<input type = "text" name = "body">
-      <input id = "submit_bottun" input type = "submit" name = "submit" value = "投稿">
+				<li>こんにちは、<%= current_user.name %>さん</li>
+				<li><a href="/signout">ログアウト</a></li>
+				<form action = "/toukou" method = "post">
+					<input type = "hidden" name = "user_id" value = "<%= session[:user] %>">
+					<div>
+					<% @toukous.each do |toukou| %>
+						<%= toukou.name %><br>
+						<%= toukou.body %><br><hr>
+					<% end %>
+					</div>
+					<input type = "text" name = "body">
+					<input id = "submit_bottun" type = "submit" name = "submit" value = "投稿">
+				</form>
 			</div>
 		<% else %>
 	    <li>新規ユーザーですか？</li>
@@ -36,6 +34,7 @@
 		  <li><a href="/signup">新規登録</a></li>
 		<% end %>
 	 </ul>
+	</div>
  </nav>
  <%= yield %>
 </body>
