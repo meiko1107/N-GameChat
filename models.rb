@@ -30,3 +30,12 @@ class UserGroup < ActiveRecord::Base
   belongs_to :user
   belongs_to :group
 end
+
+class Team < ActiveRecord::Base
+  has_many :user_teams
+end
+
+class UserTeam < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :team
+end

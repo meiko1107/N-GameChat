@@ -1,7 +1,6 @@
-class CreateGroups < ActiveRecord::Migration[5.2]
+class CreateTeams < ActiveRecord::Migration[5.2]
   def change
-    drop_table :groups
-    create_table :groups do |t|
+    create_table :teams do |t|
       t.string :name
       t.text :summary
       t.timestamps null: false
