@@ -55,3 +55,7 @@ get '/signout' do
   session[:user] = nil
   redirect '/'
 end
+
+get '/pc_group' do
+  erb :pc_group
+end
